@@ -3,8 +3,15 @@
 ## Description
 The cli-parser parse command-line arguments and returns the information. It respects flags/switches, arguments and (quoted) options.
 
+## Installation
+```
+gem install cli-parser
+```
+
 ## Usage
 ```
+require 'cli-parser'
+
 arguments, options = CliParser.parse(flags, opts, cmd)
 ```
 ### Input
@@ -21,6 +28,8 @@ arguments, options = CliParser.parse(flags, opts, cmd)
 ## Examples
 
 ```
+require 'cli-parser'
+
 cli_flags = %w(-i -c -t)
 cli_options = %w(-s, -a)
 arguments, options = CliParse.parse(cli_flags, cli_options)
@@ -28,6 +37,8 @@ arguments, options = CliParse.parse(cli_flags, cli_options)
 
 By default it parses the command-line options from ARGV, but the parser also accepts an optional third parameter, which contain all arguments as a string.
 ```
+require 'cli-parser'
+
 cmd = '-i arg1 -c -s Test -a "Hello World" arg2'
 arguments, options = CliParser.parse(%w(-i -c -t), %w(-s -a), cmd)
 
