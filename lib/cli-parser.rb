@@ -17,7 +17,7 @@ module CliParser
 				v = true if flags.include?(k)
 				v = v.to_s.gsub(/^\"/, '').sub(/\"$/, '') if options.include?(k)
 				result_opts[k] = v
-			else
+			elsif !a[0].to_s.empty?
 				result_args.push(a[0])
 			end
 		}
