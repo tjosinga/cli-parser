@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 	s.name            = 'cli-parser'
-	s.version         = '0.0.2'
-	s.date            = '2015-04-13'
+	s.version         = '0.0.3'
+	s.date            = '2015-04-14'
 	s.summary         = 'CLI Parser'
 	s.description     = 'A command-line parser. Extracts arguments, switches and options.'
 	s.authors         = ['Taco Jan Osinga']
