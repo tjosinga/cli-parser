@@ -7,8 +7,8 @@ module CliParser
 		result_opts = {}
 
 		keywords = %w("[^"]*" [^\s-][^\s]+)
-		keywords << flags.collect { | f | Regexp.quote(f) }.join('|')
-		keywords << options.collect { | o | Regexp.quote(o) + '\s+([^\s"]+|"[^"]*")+'  }.join('|')
+		keywords << flags.collect { | f | Regexp.quote(f) }.join('|') unless flags.empty?
+		keywords << options.collect { | o | Regexp.quote(o) + '\s+([^\s"]+|"[^"]*")+'  }.join('|') unless options.empty?
 		regex = Regexp.new('(' + keywords.compact.join('|') + ')')
 
 		cmd.scan(regex).each { | a |
